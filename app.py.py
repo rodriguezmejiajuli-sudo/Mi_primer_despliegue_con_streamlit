@@ -29,13 +29,6 @@ modelo, min_max_scaler, variables = pickle.load(open(filename, 'rb'))
 #data = pd.read_csv("videojuegos-datosFuturos.csv")
 #data.head()
 
-#Interfaz grafica
-#Hacemos la predicción con el Tree
-Y_pred = modelo.predict(data_preparada)
-print(Y_pred)
-
-data['Prediccion']=Y_pred
-data.head()
 
 #Interfaz gráfica
 #Se crea interfaz gráfica con streamlit para captura de los datos
@@ -54,6 +47,8 @@ Consumidor_habitual = st.selectbox('Consumidor_habitual', ['True', 'False'])
 #Dataframe
 datos = [[Edad, videojuego,Plataforma,Sexo,Consumidor_habitual]]
 data = pd.DataFrame(datos, columns=['Edad', 'videojuego','Plataforma','Sexo','Consumidor_habitual']) #Dataframe con los mismos nombres de variables
+
+
 
 # (los datos deben quedar exactamente igual)
 #Se realiza la preparación
